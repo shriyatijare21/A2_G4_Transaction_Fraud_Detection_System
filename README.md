@@ -10,6 +10,8 @@ The goal of this project is to:
 - Compare two major ML models
   - Logistic Regression
   - Random Forest Classifier
+  - XGBoost Model
+- Integrate location-based behavioural analysis to identify geographical fraud patterns. 
 - Build an interactive fraud simulation app where the user enters an amount, and the system:
   - generates a realistic transaction pattern
   - predicts risk levels
@@ -48,6 +50,8 @@ The dataset contains 30 columns, divided as follows:
    Target label
     - 0 → Legitimate transaction
     - 1 → Fraudulent transaction
+4. Location (Added Feature) – City/Region of transaction
+    - Helps detect location-based anomalies
 
 ### Why This Dataset?
 - **Research benchmark:** Used in hundreds of ML papers for fraud detection performance comparison.
@@ -83,6 +87,10 @@ The forest aggregates outputs:
 - If most trees vote Legit → Class 0
 This makes it extremely effective for non-linear, complex, and imbalanced data.
 
+### 3.3 XGBoost Classifier
+The most powerful gradient-boosting model used widely in fraud detection systems.
+- Typically outperforms both Logistic Regression and Random Forest
+- Handles location-based signals very well
 
 ## 4. Results & Evaluation
 ### Accuracy Scores and model comparisons
@@ -104,7 +112,7 @@ This simulates real-banking fraud detection behaviour.
 
 ## 6. Conclusion
 - Fraud detection is possible with high accuracy using machine learning.
-- Random Forest outperforms Logistic Regression due to its ability to learn complex patterns.
+- Random Forest and XGBoost outperforms Logistic Regression due to its ability to learn complex patterns.
 - Components (V1–V28) play the biggest role in detecting hidden fraud signals.
 - Even with imbalanced data, proper preprocessing + scaling + model selection gives strong results.
 - The Gradio application provides an interactive, real-world demo of how fraud detection systems function.
